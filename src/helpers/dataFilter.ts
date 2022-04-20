@@ -27,5 +27,16 @@ export const FormatDate = (date : Date) : string => {
     let FormatMonth = month < 10 ? "0" + month : month
     let FormatDay = day < 10 ? "0" + day : day
     return `${FormatMonth}-${FormatDay}-${year}`
+}
 
+export const FormatMonth = (currentMonth: string): string => {
+    let months = [
+        "January", "February", "March",
+        "April", "May", "June", "July",
+        "August", "September", "October",
+        "November", "December"
+    ]
+
+    let [year, month] = currentMonth.split('-')
+    return `${months[parseInt(month)- 1]} ${year}`
 }
