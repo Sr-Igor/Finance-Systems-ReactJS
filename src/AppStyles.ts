@@ -18,4 +18,7 @@ export const Header = styled.div`
     }
 `
 
-export const Body = styled.div``
+export const Body = styled.div`
+    margin: auto;
+    max-width: 980px;
+`
