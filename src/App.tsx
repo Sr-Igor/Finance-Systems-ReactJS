@@ -11,6 +11,7 @@ import * as C from './AppStyles'
 
 import { TableArea } from './components/TableArea'
 import { InfoArea } from './components/InfoArea'
+import { InputArea } from './components/InputArea'
 
 function App() {
 
@@ -45,10 +46,17 @@ function App() {
     setCurrentMonth(newDate)
   }
 
+  const AddNewItem = (item : Item) => {
+    console.log(item)
+    let newList = [...list]
+    newList.push(item)
+    setList(newList)
+  }
+
   return(
       <C.Container>
         <C.Header>
-          <h1>Finance Systms</h1>
+          <h1>Finance Systems</h1>
         </C.Header>
         <C.Body>
           <InfoArea 
@@ -56,10 +64,9 @@ function App() {
           changeMonth={ChangeCurrentMonth}
           income={income}
           expense={expense}
-
           />
 
-          {/* {Add} */}
+          <InputArea onAdd={AddNewItem}/>
 
           <TableArea list={filteredList}/>
         </C.Body>
